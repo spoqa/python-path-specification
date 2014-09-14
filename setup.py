@@ -1,6 +1,7 @@
 # coding: utf-8
 
 import io
+import sys
 from setuptools import setup, find_packages
 
 from pathspec import __author__, __email__, __license__, __project__, __version__
@@ -34,4 +35,5 @@ setup(
 	license=__license__,
 	packages=find_packages(),
 	test_suite='pathspec.tests.test_gitignore.GitIgnoreTest',
+	tests_require=['unittest2'] if sys.version_info < (2, 7) else [],
 )

@@ -2,8 +2,10 @@
 """
 This script tests ``GitIgnorePattern``.
 """
-
-import unittest
+try:
+	import unittest2 as unittest  # for Python 2.6
+except ImportError:
+	import unittest
 
 from pathspec import GitIgnorePattern
 
